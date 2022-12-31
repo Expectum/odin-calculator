@@ -6,6 +6,9 @@ body {
     display: flex;
     flex-direction: column;
 }
+.result {
+    border: 1px solid;
+}
 .left_right {
     display: flex;
     margin: 0px 5px 0px;
