@@ -14,3 +14,8 @@ body {
 .numbers button {
     padding: 5px 9px 5px;
 }
+.clear {
+    width:80px;
+    align-self: baseline;
+    padding: 5px 9px 5px;
+}
