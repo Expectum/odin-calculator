@@ -6,3 +6,11 @@ body {
     display: flex;
     flex-direction: column;
 }
+.numbers {
+    width: 160px;
+    height: 90px;
+    margin: 10px 0px 0px;
+}
+.numbers button {
+    padding: 5px 9px 5px;
+}
