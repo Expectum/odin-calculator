@@ -45,6 +45,7 @@ const plus = document.querySelector('.plus');
 const minus = document.querySelector('.minus');
 
 let displayValue = 0;
+let operator = '';
 
 one.addEventListener('click', () => {
 displayValue *= 10;
