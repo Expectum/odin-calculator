@@ -38,10 +38,46 @@ const seven = document.querySelector('.seven');
 const eight = document.querySelector('.eight');
 const nine = document.querySelector('.nine');
 const zero = document.querySelector('.zero');
+
 let decimal = 1;
 let displayValue = 0;
+
 one.addEventListener('click', () => {
 displayValue += decimal * 1;
 decimal *= 10;
-console.log(displayValue)
+})
+two.addEventListener('click', () => {
+    displayValue += decimal * 2;
+    decimal *= 10;
+})
+three.addEventListener('click', () => {
+    displayValue += decimal * 3;
+    decimal *= 10;
+})
+four.addEventListener('click', () => {
+    displayValue += decimal * 4;
+    decimal *= 10;
+})
+five.addEventListener('click', () => {
+    displayValue += decimal * 5;
+    decimal *= 10;
+})
+six.addEventListener('click', () => {
+    displayValue += decimal * 6;
+    decimal *= 10;
+})
+seven.addEventListener('click', () => {
+    displayValue += decimal * 7;
+    decimal *= 10;
+})
+eight.addEventListener('click', () => {
+    displayValue += decimal * 8;
+    decimal *= 10;
+})
+nine.addEventListener('click', () => {
+    displayValue += decimal * 9;
+    decimal *= 10;
+})
+zero.addEventListener('click', () => {
+    decimal *= 10;
 })
