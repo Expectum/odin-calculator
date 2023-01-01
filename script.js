@@ -18,10 +18,10 @@ switch(operator) {
     case '-': 
               subtract(a, b);  
               break;
-    case '*': 
+    case 'x': 
               multiply(a, b);  
               break;
-    case '/': 
+    case '÷': 
               divide(a, b);  
               break;
     default:
@@ -85,4 +85,16 @@ nine.addEventListener('click', () => {
 })
 zero.addEventListener('click', () => {
     displayValue *= 10;
+})
+multiply.addEventListener('click', () => {
+    operator = 'x';
+})
+obelus.addEventListener('click', () => {
+    operator = '÷';
+})
+plus.addEventListener('click', () => {
+    operator = '+';
+})
+minus.addEventListener('click', () => {
+    operator = '-';
 })
