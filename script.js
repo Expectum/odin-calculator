@@ -44,12 +44,13 @@ const obelus = document.querySelector('.obelus');
 const plus = document.querySelector('.plus');
 const minus = document.querySelector('.minus');
 
+let displayString = '';
 let displayValue = 0;
 let operator = '';
 
 one.addEventListener('click', () => {
-displayValue *= 10;
-displayValue += 1;
+    displayValue *= 10;
+    displayValue += 1;
 })
 two.addEventListener('click', () => {
     displayValue *= 10;
@@ -88,13 +89,22 @@ zero.addEventListener('click', () => {
 })
 multiply.addEventListener('click', () => {
     operator = 'x';
+    displayString += displayValue + operator;
+    displayValue = 0;
 })
 obelus.addEventListener('click', () => {
     operator = '÷';
+    displayString += displayValue + operator;
+    displayValue = 0;
 })
 plus.addEventListener('click', () => {
     operator = '+';
+    displayString += displayValue + operator;
+    displayValue = 0;
 })
 minus.addEventListener('click', () => {
     operator = '-';
+    displayString += displayValue + operator;
+    displayValue = 0;
 })
+
