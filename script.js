@@ -39,45 +39,44 @@ const eight = document.querySelector('.eight');
 const nine = document.querySelector('.nine');
 const zero = document.querySelector('.zero');
 
-let decimal = 1;
 let displayValue = 0;
 
 one.addEventListener('click', () => {
-displayValue += decimal * 1;
-decimal *= 10;
+displayValue *= 10;
+displayValue += 1;
 })
 two.addEventListener('click', () => {
-    displayValue += decimal * 2;
-    decimal *= 10;
+    displayValue *= 10;
+    displayValue += 2;
 })
 three.addEventListener('click', () => {
-    displayValue += decimal * 3;
-    decimal *= 10;
+    displayValue *= 10;
+    displayValue += 3;
 })
 four.addEventListener('click', () => {
-    displayValue += decimal * 4;
-    decimal *= 10;
+    displayValue *= 10;
+    displayValue += 4;
 })
 five.addEventListener('click', () => {
-    displayValue += decimal * 5;
-    decimal *= 10;
+    displayValue *= 10;
+    displayValue += 5;
 })
 six.addEventListener('click', () => {
-    displayValue += decimal * 6;
-    decimal *= 10;
+    displayValue *= 10;
+    displayValue += 6;
 })
 seven.addEventListener('click', () => {
-    displayValue += decimal * 7;
-    decimal *= 10;
+    displayValue *= 10;
+    displayValue += 7;
 })
 eight.addEventListener('click', () => {
-    displayValue += decimal * 8;
-    decimal *= 10;
+    displayValue *= 10;
+    displayValue += 8;
 })
 nine.addEventListener('click', () => {
-    displayValue += decimal * 9;
-    decimal *= 10;
+    displayValue *= 10;
+    displayValue += 9;
 })
 zero.addEventListener('click', () => {
-    decimal *= 10;
+    displayValue *= 10;
 })
