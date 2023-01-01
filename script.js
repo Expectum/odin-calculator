@@ -4,7 +4,7 @@ return a + b;
 function subtract(a, b) {
 return a - b;
 }
-function multiply(a, b) {
+function multiplicate(a, b) {
 return a * b;
 }
 function divide(a, b) {
@@ -39,12 +39,11 @@ const eight = document.querySelector('.eight');
 const nine = document.querySelector('.nine');
 const zero = document.querySelector('.zero');
 const equals = document.querySelector('.equals');
-const multiply = document.querySelector('.multiply');
 const obelus = document.querySelector('.obelus');
 const plus = document.querySelector('.plus');
 const minus = document.querySelector('.minus');
+const multiply = document.querySelector('.multiply');
 
-let displayString = '';
 let displayValue = 0;
 let operator = '';
 
@@ -55,6 +54,7 @@ one.addEventListener('click', () => {
 two.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 2;
+    console.log(displayValue);
 })
 three.addEventListener('click', () => {
     displayValue *= 10;
@@ -87,24 +87,24 @@ nine.addEventListener('click', () => {
 zero.addEventListener('click', () => {
     displayValue *= 10;
 })
-multiply.addEventListener('click', () => {
-    operator = 'x';
-    displayString += displayValue + operator;
-    displayValue = 0;
-})
 obelus.addEventListener('click', () => {
-    operator = '÷';
-    displayString += displayValue + operator;
+    operator += displayValue + '÷';
     displayValue = 0;
 })
 plus.addEventListener('click', () => {
-    operator = '+';
-    displayString += displayValue + operator;
+    operator += displayValue + '+';
     displayValue = 0;
 })
 minus.addEventListener('click', () => {
-    operator = '-';
-    displayString += displayValue + operator;
+    operator += displayValue + '-';
     displayValue = 0;
 })
+multiply.addEventListener('click', () => {
+    operator += displayValue + 'x';
+    displayValue = 0;
+})
+equals.addEventListener('click', () => {
+    operator += displayValue;
 
+    displayValue = 0;
+})
