@@ -38,4 +38,10 @@ const seven = document.querySelector('.seven');
 const eight = document.querySelector('.eight');
 const nine = document.querySelector('.nine');
 const zero = document.querySelector('.zero');
+let decimal = 1;
 let displayValue = 0;
+one.addEventListener('click', () => {
+displayValue += decimal * 1;
+decimal *= 10;
+console.log(displayValue)
+})
