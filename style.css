@@ -9,6 +9,8 @@ body {
 .result {
     border: 1px solid;
     margin: 7px 20px 6px;
+    display: flex;
+    justify-content: flex-end;
 }
 .left_right {
     display: flex;
