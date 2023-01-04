@@ -33,6 +33,8 @@ let stringCalculation = "";
 let display = "";
 let lastDisplayValueString = "";
 let opNum = 0;
+let displayResult = document.querySelector('.result');
+displayResult.innerText = '0';
 
 function displayCalculationFromNumber(lastDisplayValue, opNum) {
 
@@ -42,10 +44,12 @@ lastDisplayValueString = lastDisplayValueString.toString();
 display = display.slice(0,display.length+opNum-lastDisplayValueString.length);
 
 display += lastDisplayValue[lastDisplayValue.length-1];
+displayResult.innerText = display;
 }
 
 function displayCalculationFromOperator(operators) {
 display += operators[operators.length-1];
+displayResult.innerText = display;
 }
 
 const one = document.querySelector('.one');
