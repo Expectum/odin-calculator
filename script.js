@@ -44,8 +44,9 @@ const plus = document.querySelector('.plus');
 const minus = document.querySelector('.minus');
 const multiply = document.querySelector('.multiply');
 
+let operators = [];
+let numbers = [];
 let displayValue = 0;
-let operator = '';
 
 one.addEventListener('click', () => {
     displayValue *= 10;
@@ -54,7 +55,6 @@ one.addEventListener('click', () => {
 two.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 2;
-    console.log(displayValue);
 })
 three.addEventListener('click', () => {
     displayValue *= 10;
@@ -88,23 +88,27 @@ zero.addEventListener('click', () => {
     displayValue *= 10;
 })
 obelus.addEventListener('click', () => {
-    operator += displayValue + '÷';
+    numbers.push(displayValue);
+    operators.push('÷');
     displayValue = 0;
 })
 plus.addEventListener('click', () => {
-    operator += displayValue + '+';
+    numbers.push(displayValue);
+    operators.push('+');
     displayValue = 0;
 })
 minus.addEventListener('click', () => {
-    operator += displayValue + '-';
+    numbers.push(displayValue);
+    operators.push('-');
     displayValue = 0;
 })
 multiply.addEventListener('click', () => {
-    operator += displayValue + 'x';
+    numbers.push(displayValue);
+    operators.push('x');
     displayValue = 0;
 })
 equals.addEventListener('click', () => {
-    operator += displayValue;
-
-    displayValue = 0;
+    numbers.push(displayValue);
+    console.log(operators);
+    console.log(numbers);
 })
