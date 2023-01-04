@@ -31,12 +31,22 @@ switch(operator) {
 
 let stringCalculation = "";
 let display = "";
+let lastDisplayValueString = "";
+let opNum = 0;
 
-function displayCalculationFromNumber(lastDisplayValue) {
-display = display.slice(-1,display.lastIndexOf('+'&'-'&'x'&'÷'));
+function displayCalculationFromNumber(lastDisplayValue, opNum) {
+
+lastDisplayValueString = lastDisplayValue[lastDisplayValue.length-2];
+lastDisplayValueString = lastDisplayValueString.toString();
+
+display = display.slice(0,display.length+opNum-lastDisplayValueString.length);
+
 display += lastDisplayValue[lastDisplayValue.length-1];
 }
 
+function displayCalculationFromOperator(operators) {
+display += operators[operators.length-1];
+}
 
 const one = document.querySelector('.one');
 const two = document.querySelector('.two');
@@ -57,86 +67,108 @@ const multiply = document.querySelector('.multiply');
 let operators = [];
 let numbers = [];
 let displayValue = 0;
-let lastDisplayValue = [];
+let lastDisplayValue = [0];
 
 one.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 1;
     lastDisplayValue.push(displayValue);
-    displayCalculationFromNumber(lastDisplayValue);
+    displayCalculationFromNumber(lastDisplayValue, opNum);
+    opNum = 0;
 })
 two.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 2;
     lastDisplayValue.push(displayValue);
-    displayCalculationFromNumber(lastDisplayValue);
+    displayCalculationFromNumber(lastDisplayValue, opNum);
+    opNum = 0;
 })
 three.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 3;
     lastDisplayValue.push(displayValue);
-    displayCalculationFromNumber(lastDisplayValue);
+    displayCalculationFromNumber(lastDisplayValue, opNum);
+    opNum = 0;
 })
 four.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 4;
     lastDisplayValue.push(displayValue);
-    displayCalculationFromNumber(lastDisplayValue);
+    displayCalculationFromNumber(lastDisplayValue, opNum);
+    opNum = 0;
 })
 five.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 5;
     lastDisplayValue.push(displayValue);
-    displayCalculationFromNumber(lastDisplayValue);
+    displayCalculationFromNumber(lastDisplayValue, opNum);
+    opNum = 0;
 })
 six.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 6;
     lastDisplayValue.push(displayValue);
-    displayCalculationFromNumber(lastDisplayValue);
+    displayCalculationFromNumber(lastDisplayValue, opNum);
+    opNum = 0;
 })
 seven.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 7;
     lastDisplayValue.push(displayValue);
-    displayCalculationFromNumber(lastDisplayValue);
+    displayCalculationFromNumber(lastDisplayValue, opNum);
+    opNum = 0;
 })
 eight.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 8;
     lastDisplayValue.push(displayValue);
-    displayCalculationFromNumber(lastDisplayValue);
+    displayCalculationFromNumber(lastDisplayValue, opNum);
+    opNum = 0;
 })
 nine.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 9;
     lastDisplayValue.push(displayValue);
-    displayCalculationFromNumber(lastDisplayValue);
+    displayCalculationFromNumber(lastDisplayValue, opNum);
+    opNum = 0;
 })
 zero.addEventListener('click', () => {
     displayValue *= 10;
     lastDisplayValue.push(displayValue);
-    displayCalculationFromNumber(lastDisplayValue);
+    displayCalculationFromNumber(lastDisplayValue, opNum);
+    opNum = 0;
 })
 obelus.addEventListener('click', () => {
     numbers.push(displayValue);
     operators.push('÷');
+    lastDisplayValue = [0];
     displayValue = 0;
+    opNum += 1;
+    displayCalculationFromOperator(operators);
 })
 plus.addEventListener('click', () => {
     numbers.push(displayValue);
     operators.push('+');
+    lastDisplayValue = [0];
     displayValue = 0;
+    opNum += 1;
+    displayCalculationFromOperator(operators);
 })
 minus.addEventListener('click', () => {
     numbers.push(displayValue);
     operators.push('-');
+    lastDisplayValue = [0];
     displayValue = 0;
+    opNum += 1;
+    displayCalculationFromOperator(operators);
 })
 multiply.addEventListener('click', () => {
     numbers.push(displayValue);
     operators.push('x');
+    lastDisplayValue = [0];
     displayValue = 0;
+    opNum += 1;
+    displayCalculationFromOperator(operators);
 })
 equals.addEventListener('click', () => {
     numbers.push(displayValue);
