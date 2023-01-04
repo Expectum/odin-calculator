@@ -28,6 +28,16 @@ switch(operator) {
               console.log("Something went horribly wrong..."); 
 }
 }
+
+let stringCalculation = "";
+let display = "";
+
+function displayCalculationFromNumber(lastDisplayValue) {
+display = display.slice(-1,display.lastIndexOf('+'&'-'&'x'&'÷'));
+display += lastDisplayValue[lastDisplayValue.length-1];
+}
+
+
 const one = document.querySelector('.one');
 const two = document.querySelector('.two');
 const three = document.querySelector('.three');
@@ -47,45 +57,66 @@ const multiply = document.querySelector('.multiply');
 let operators = [];
 let numbers = [];
 let displayValue = 0;
+let lastDisplayValue = [];
 
 one.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 1;
+    lastDisplayValue.push(displayValue);
+    displayCalculationFromNumber(lastDisplayValue);
 })
 two.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 2;
+    lastDisplayValue.push(displayValue);
+    displayCalculationFromNumber(lastDisplayValue);
 })
 three.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 3;
+    lastDisplayValue.push(displayValue);
+    displayCalculationFromNumber(lastDisplayValue);
 })
 four.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 4;
+    lastDisplayValue.push(displayValue);
+    displayCalculationFromNumber(lastDisplayValue);
 })
 five.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 5;
+    lastDisplayValue.push(displayValue);
+    displayCalculationFromNumber(lastDisplayValue);
 })
 six.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 6;
+    lastDisplayValue.push(displayValue);
+    displayCalculationFromNumber(lastDisplayValue);
 })
 seven.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 7;
+    lastDisplayValue.push(displayValue);
+    displayCalculationFromNumber(lastDisplayValue);
 })
 eight.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 8;
+    lastDisplayValue.push(displayValue);
+    displayCalculationFromNumber(lastDisplayValue);
 })
 nine.addEventListener('click', () => {
     displayValue *= 10;
     displayValue += 9;
+    lastDisplayValue.push(displayValue);
+    displayCalculationFromNumber(lastDisplayValue);
 })
 zero.addEventListener('click', () => {
     displayValue *= 10;
+    lastDisplayValue.push(displayValue);
+    displayCalculationFromNumber(lastDisplayValue);
 })
 obelus.addEventListener('click', () => {
     numbers.push(displayValue);
